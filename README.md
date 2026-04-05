@@ -53,6 +53,10 @@ Backend: Flask
 Frontend: HTML, CSS
 Model Storage: Joblib
 Config Management: YAML
+
+
+
+
  Project Structure
 ├── app.py                  # Flask web app
 ├── main.py                 # CLI entry point
