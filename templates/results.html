@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segmentation Results - AI Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="animate-fade-in">
+            <h1 style="font-size: 2.5rem;">Analysis Complete</h1>
+            <p class="subtitle">Detailed breakdown of your customer segments based on behavioral patterns.</p>
+        </header>
+
+        <main>
+            <div class="results-grid animate-fade-in">
+                <div class="glass stat-card" style="grid-column: span 2;">
+                    <h3>Segment Distribution</h3>
+                    <div style="height: 300px; display: flex; justify-content: center;">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="glass stat-card">
+                    <h3>Actions</h3>
+                    <p class="label" style="margin-bottom: 2rem;">Download the full dataset with assigned clusters.</p>
+                    <a href="{{ url_for('download_file', filename=download_link) }}" class="btn-primary"
+                        style="text-decoration: none; display: inline-block;">Download CSV</a>
+                    <a href="/"
+                        style="display: block; margin-top: 1.5rem; color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">←
+                        Process another file</a>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 4rem; margin-bottom: 2rem;" class="animate-fade-in">Segment Profiles</h2>
+            <div class="results-grid animate-fade-in" style="margin-top: 0;">
+                {% for cluster, stats in summary.items() %}
+                <div class="glass stat-card">
+                    <h3 style="display: flex; justify-content: space-between; align-items: center;">
+                        Cluster {{ cluster }}
+                        <span
+                            style="font-size: 0.8rem; background: var(--glass-bg); padding: 4px 10px; border-radius: 20px; color: var(--text-secondary);">
+                            {{ counts[cluster] }} Customers
+                        </span>
+                    </h3>
+
+                    <div style="margin-top: 1.5rem;">
+                        <div style="margin-bottom: 1rem;">
+                            <span class="label">Avg Recency</span>
+                            <span class="value" style="font-size: 1.5rem;">{{ stats.recency }} days</span>
+                        </div>
+                        <div style="margin-bottom: 1rem;">
+                            <span class="label">Avg Frequency</span>
+                            <span class="value" style="font-size: 1.5rem;">{{ stats.frequency }} orders</span>
+                        </div>
+                        <div>
+                            <span class="label">Avg Monetary</span>
+                            <span class="value" style="font-size: 1.5rem;">${{ stats.monetary }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Customer Segmentation AI. Insights delivered by Machine Learning.</p>
+        </footer>
+    </div>
+
+    <script>
+        const counts = {{ counts| tojson }};
+        const labels = Object.keys(counts).map(c => 'Cluster ' + c);
+        const data = Object.values(counts);
+
+        const ctx = document.getElementById('distributionChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: [
+                        '#6366f1', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'
+                    ],
+                    borderColor: 'rgba(255, 255, 255, 0.1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#94a3b8',
+                            padding: 20,
+                            font: { size: 12 }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

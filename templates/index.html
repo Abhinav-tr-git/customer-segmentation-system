@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="animate-fade-in">
+            <h1>Customer Segmentation</h1>
+            <p class="subtitle">AI-powered analytics to understand your customer base through RFM modeling.</p>
+        </header>
+
+        <main>
+            <div class="glass upload-card animate-fade-in" style="animation-delay: 0.2s;">
+                <h2>Analyze Transaction Data</h2>
+                <p style="color: var(--text-secondary); margin: 1.5rem 0;">Upload your transaction history CSV to automatically identify behavioral segments.</p>
+                
+                <form action="/predict" method="post" enctype="multipart/form-data">
+                    <div class="drop-zone" onclick="document.getElementById('fileInput').click()">
+                        <p id="fileName">Drag and drop or click to upload CSV</p>
+                        <input type="file" id="fileInput" name="file" hidden onchange="updateFileName()">
+                    </div>
+                    {% if error %}
+                    <p style="color: #ef4444; margin-bottom: 1rem;">{{ error }}</p>
+                    {% endif %}
+                    <button type="submit" class="btn-primary">Generate Insights</button>
+                </form>
+            </div>
+
+            <section class="results-grid animate-fade-in" style="animation-delay: 0.4s;">
+                <div class="glass stat-card">
+                    <h3>Recency</h3>
+                    <p class="label">Days since last purchase</p>
+                </div>
+                <div class="glass stat-card">
+                    <h3>Frequency</h3>
+                    <p class="label">Total number of orders</p>
+                </div>
+                <div class="glass stat-card">
+                    <h3>Monetary</h3>
+                    <p class="label">Total revenue generated</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Customer Segmentation AI. Built with Flask & Scikit-Learn.</p>
+        </footer>
+    </div>
+
+    <script>
+        function updateFileName() {
+            const input = document.getElementById('fileInput');
+            const fileName = document.getElementById('fileName');
+            if (input.files.length > 0) {
+                fileName.textContent = input.files[0].name;
+                fileName.style.color = 'var(--accent-color)';
+            }
+        }
+    </script>
+</body>
+</html>

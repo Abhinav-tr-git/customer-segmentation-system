@@ -1,0 +1,292 @@
+2026-02-25 00:23:04.486 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 00:23:04.487 | INFO     | src.pipelines.training_pipeline:run_training:12 - Starting Training Pipeline
+2026-02-25 00:23:04.489 | INFO     | src.data_processing.processor:load_data:17 - Loading data from data/raw/int_online_tx.csv
+2026-02-25 00:23:04.537 | INFO     | src.data_processing.processor:clean_transactions:25 - Cleaning transaction data
+2026-02-25 00:23:04.608 | INFO     | src.data_processing.processor:clean_transactions:39 - Cleaned data shape: (33698, 9)
+2026-02-25 00:23:04.608 | INFO     | src.data_processing.processor:aggregate_to_customer_level:44 - Aggregating to customer level
+2026-02-25 00:23:04.653 | INFO     | src.data_processing.processor:aggregate_to_customer_level:75 - Customer level data shape: (414, 5)
+2026-02-25 00:23:04.654 | INFO     | src.data_processing.processor:scale_features:80 - Scaling features
+2026-02-25 00:23:04.662 | INFO     | src.data_processing.processor:save_scaler:97 - Scaler saved to models\scaler.joblib
+2026-02-25 00:23:04.664 | INFO     | src.models.clustering:train:24 - Training KMeans with 5 clusters
+2026-02-25 00:23:04.665 | INFO     | src.models.clustering:train:27 - Applying PCA with 3 components
+2026-02-25 00:23:06.607 | INFO     | src.models.clustering:train:32 - Model training complete.
+2026-02-25 00:23:06.610 | INFO     | src.models.clustering:save_artifacts:53 - Model saved to models\clustering_model.joblib
+2026-02-25 00:23:06.610 | INFO     | src.models.clustering:save_artifacts:54 - PCA transformer saved to models\pca_transformer.joblib
+2026-02-25 00:23:06.641 | INFO     | src.pipelines.training_pipeline:run_training:34 - Training pipeline complete. Results saved to data\processed\customer_segments.csv
+2026-02-25 00:23:20.122 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 00:23:20.122 | INFO     | src.pipelines.inference_pipeline:run_inference:13 - Starting Inference Pipeline for data/raw/int_online_tx.csv
+2026-02-25 00:23:20.123 | INFO     | src.data_processing.processor:load_data:17 - Loading data from data/raw/int_online_tx.csv
+2026-02-25 00:23:20.157 | INFO     | src.data_processing.processor:clean_transactions:25 - Cleaning transaction data
+2026-02-25 00:23:20.215 | INFO     | src.data_processing.processor:clean_transactions:39 - Cleaned data shape: (33698, 9)
+2026-02-25 00:23:20.215 | INFO     | src.data_processing.processor:aggregate_to_customer_level:44 - Aggregating to customer level
+2026-02-25 00:23:20.240 | INFO     | src.data_processing.processor:aggregate_to_customer_level:75 - Customer level data shape: (414, 5)
+2026-02-25 00:23:20.241 | INFO     | src.data_processing.processor:scale_features:80 - Scaling features
+2026-02-25 00:23:20.276 | INFO     | src.pipelines.inference_pipeline:run_inference:29 - Inference complete.
+2026-02-25 00:30:23.738 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 00:30:23.739 | INFO     | src.pipelines.training_pipeline:run_training:12 - Starting Training Pipeline (Refined)
+2026-02-25 00:30:23.740 | INFO     | src.data_processing.processor:load_data:17 - Loading data from data/raw/int_online_tx.csv
+2026-02-25 00:30:23.788 | INFO     | src.data_processing.processor:clean_transactions:36 - Cleaning transaction data
+2026-02-25 00:30:23.868 | INFO     | src.data_processing.processor:clean_transactions:49 - Cleaned data shape: (33698, 9)
+2026-02-25 00:30:23.868 | INFO     | src.data_processing.processor:aggregate_to_customer_level:74 - Aggregating to customer level
+2026-02-25 00:30:23.903 | INFO     | src.data_processing.processor:extract_item_features:54 - Extracting item-level features
+2026-02-25 00:30:23.920 | INFO     | src.data_processing.processor:aggregate_to_customer_level:98 - Customer level data shape: (414, 24)
+2026-02-25 00:30:23.920 | INFO     | src.data_processing.processor:scale_features:103 - Scaling features
+2026-02-25 00:30:23.923 | INFO     | src.data_processing.processor:save_scaler:116 - Scaler saved to models\scaler.joblib
+2026-02-25 00:30:23.925 | INFO     | src.models.clustering:train:30 - Training KMeans with 5 clusters
+2026-02-25 00:30:23.926 | INFO     | src.models.clustering:train:34 - Applying PCA with 3 components
+2026-02-25 00:30:25.915 | INFO     | src.models.clustering:train:39 - Model training complete.
+2026-02-25 00:30:25.919 | INFO     | src.models.clustering:save_artifacts:72 - Model artifacts saved to models
+2026-02-25 00:30:25.931 | INFO     | src.pipelines.training_pipeline:run_training:34 - Training pipeline complete. Results saved to data\processed\customer_segments.csv
+2026-02-25 00:30:26.657 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 00:30:26.657 | INFO     | src.pipelines.inference_pipeline:run_inference:13 - Starting Inference Pipeline for data/raw/int_online_tx.csv
+2026-02-25 00:30:26.658 | INFO     | src.data_processing.processor:load_data:17 - Loading data from data/raw/int_online_tx.csv
+2026-02-25 00:30:26.692 | INFO     | src.data_processing.processor:clean_transactions:36 - Cleaning transaction data
+2026-02-25 00:30:26.750 | INFO     | src.data_processing.processor:clean_transactions:49 - Cleaned data shape: (33698, 9)
+2026-02-25 00:30:26.750 | INFO     | src.data_processing.processor:aggregate_to_customer_level:74 - Aggregating to customer level
+2026-02-25 00:30:26.780 | INFO     | src.data_processing.processor:extract_item_features:54 - Extracting item-level features
+2026-02-25 00:30:26.792 | INFO     | src.data_processing.processor:aggregate_to_customer_level:98 - Customer level data shape: (414, 24)
+2026-02-25 00:30:26.793 | INFO     | src.data_processing.processor:scale_features:103 - Scaling features
+2026-02-25 00:30:26.823 | INFO     | src.models.clustering:load_artifacts:46 - Loading model artifacts from disk...
+2026-02-25 00:30:26.854 | INFO     | src.models.clustering:load_artifacts:53 - Artifacts loaded successfully.
+2026-02-25 00:30:26.896 | INFO     | src.pipelines.inference_pipeline:run_inference:29 - Inference complete.
+2026-02-25 00:48:52.726 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 00:48:52.728 | INFO     | src.pipelines.training_pipeline:run_training:12 - Starting Training Pipeline (Refined)
+2026-02-25 00:48:52.729 | INFO     | src.data_processing.processor:load_data:17 - Loading data from data/raw/int_online_tx.csv
+2026-02-25 00:48:52.765 | INFO     | src.data_processing.processor:clean_transactions:36 - Cleaning transaction data
+2026-02-25 00:48:52.828 | INFO     | src.data_processing.processor:clean_transactions:49 - Cleaned data shape: (33698, 9)
+2026-02-25 00:48:52.829 | INFO     | src.data_processing.processor:aggregate_to_customer_level:74 - Aggregating to customer level
+2026-02-25 00:48:52.858 | INFO     | src.data_processing.processor:extract_item_features:54 - Extracting item-level features
+2026-02-25 00:48:52.870 | INFO     | src.data_processing.processor:aggregate_to_customer_level:98 - Customer level data shape: (414, 24)
+2026-02-25 00:48:52.870 | INFO     | src.data_processing.processor:scale_features:103 - Scaling features
+2026-02-25 00:48:52.874 | INFO     | src.data_processing.processor:save_scaler:116 - Scaler saved to models\scaler.joblib
+2026-02-25 00:48:52.875 | INFO     | src.models.clustering:train:30 - Training KMeans with 5 clusters
+2026-02-25 00:48:52.876 | INFO     | src.models.clustering:train:34 - Applying PCA with 3 components
+2026-02-25 00:48:55.316 | INFO     | src.models.clustering:train:39 - Model training complete.
+2026-02-25 00:48:55.318 | INFO     | src.models.clustering:save_artifacts:72 - Model artifacts saved to models
+2026-02-25 00:48:55.328 | INFO     | src.pipelines.training_pipeline:run_training:34 - Training pipeline complete. Results saved to data\processed\customer_segments.csv
+2026-02-25 00:52:28.769 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 00:52:28.770 | INFO     | src.pipelines.inference_pipeline:run_inference:13 - Starting Inference Pipeline for data/raw/int_online_tx.csv
+2026-02-25 00:52:28.771 | INFO     | src.data_processing.processor:load_data:17 - Loading data from data/raw/int_online_tx.csv
+2026-02-25 00:52:28.809 | INFO     | src.data_processing.processor:clean_transactions:36 - Cleaning transaction data
+2026-02-25 00:52:28.877 | INFO     | src.data_processing.processor:clean_transactions:49 - Cleaned data shape: (33698, 9)
+2026-02-25 00:52:28.878 | INFO     | src.data_processing.processor:aggregate_to_customer_level:74 - Aggregating to customer level
+2026-02-25 00:52:28.907 | INFO     | src.data_processing.processor:extract_item_features:54 - Extracting item-level features
+2026-02-25 00:52:28.923 | INFO     | src.data_processing.processor:aggregate_to_customer_level:98 - Customer level data shape: (414, 24)
+2026-02-25 00:52:28.923 | INFO     | src.data_processing.processor:scale_features:103 - Scaling features
+2026-02-25 00:52:28.926 | INFO     | src.models.clustering:load_artifacts:46 - Loading model artifacts from disk...
+2026-02-25 00:52:28.947 | INFO     | src.models.clustering:load_artifacts:53 - Artifacts loaded successfully.
+2026-02-25 00:52:28.983 | INFO     | src.pipelines.inference_pipeline:run_inference:29 - Inference complete.
+2026-02-25 20:51:30.765 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 20:51:32.428 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:09:01.553 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:09:03.533 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:11:53.710 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:11:55.234 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:12:41.765 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:12:41.766 | INFO     | src.pipelines.inference_pipeline:run_inference:13 - Starting Inference Pipeline for uploads\IMDB_Dataset_1.csv
+2026-02-25 22:12:41.767 | INFO     | src.data_processing.processor:load_data:17 - Loading data from uploads\IMDB_Dataset_1.csv
+2026-02-25 22:12:41.795 | ERROR    | __main__:predict:59 - Error during prediction: 'utf-8' codec can't decode byte 0xe0 in position 50428: invalid continuation byte
+2026-02-25 22:15:23.229 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:15:23.230 | INFO     | src.pipelines.inference_pipeline:run_inference:13 - Starting Inference Pipeline for uploads\Online_Retail.csv
+2026-02-25 22:15:23.232 | INFO     | src.data_processing.processor:load_data:17 - Loading data from uploads\Online_Retail.csv
+2026-02-25 22:15:23.261 | ERROR    | __main__:predict:59 - Error during prediction: 'utf-8' codec can't decode bytes in position 15-16: invalid continuation byte
+2026-02-25 22:25:24.670 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:25:24.670 | INFO     | src.pipelines.inference_pipeline:run_inference:13 - Starting Inference Pipeline for uploads\Online_Retail.csv
+2026-02-25 22:25:24.673 | INFO     | src.data_processing.processor:load_data:17 - Loading data from uploads\Online_Retail.csv
+2026-02-25 22:25:24.694 | ERROR    | __main__:predict:59 - Error during prediction: 'utf-8' codec can't decode bytes in position 15-16: invalid continuation byte
+2026-02-25 22:27:15.828 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:27:16.049 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:37:54.898 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:37:56.415 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:38:05.850 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:38:05.851 | INFO     | src.pipelines.inference_pipeline:run_inference:13 - Starting Inference Pipeline for uploads\Online_Retail.csv
+2026-02-25 22:38:05.854 | INFO     | src.data_processing.processor:load_data:17 - Loading data from uploads\Online_Retail.csv
+2026-02-25 22:38:05.893 | ERROR    | __main__:predict:59 - Error during prediction: Error tokenizing data. C error: Expected 2 fields in line 3, saw 3
+
+2026-02-25 22:39:32.242 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:39:33.243 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:55:59.997 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:56:01.611 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:56:08.990 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-25 22:56:08.991 | INFO     | src.pipelines.inference_pipeline:run_inference:13 - Starting Inference Pipeline for uploads\Online_Retail.csv
+2026-02-25 22:56:08.993 | INFO     | src.data_processing.processor:load_data:17 - Loading data from uploads\Online_Retail.csv
+2026-02-25 22:56:17.966 | INFO     | src.data_processing.processor:clean_transactions:55 - Cleaning transaction data
+2026-02-25 22:56:17.972 | ERROR    | __main__:predict:59 - Error during prediction: 'CustomerID'
+2026-02-26 19:37:32.861 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-26 19:37:34.773 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-26 19:37:46.641 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-26 19:37:46.642 | INFO     | src.pipelines.inference_pipeline:run_inference:13 - Starting Inference Pipeline for uploads\Online_Retail.csv
+2026-02-26 19:37:46.646 | INFO     | src.data_processing.processor:load_data:17 - Loading data from uploads\Online_Retail.csv
+2026-02-26 19:38:15.393 | INFO     | src.data_processing.processor:clean_transactions:55 - Cleaning transaction data
+2026-02-26 19:38:15.399 | ERROR    | __main__:predict:59 - Error during prediction: 'CustomerID'
+2026-02-26 20:01:13.565 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-26 20:01:13.565 | INFO     | src.pipelines.training_pipeline:run_training:12 - Starting Training Pipeline (Refined)
+2026-02-26 20:01:13.567 | INFO     | src.data_processing.processor:load_data:17 - Loading data from data/synthetic_transactions.csv
+2026-02-26 20:01:13.587 | INFO     | src.data_processing.processor:clean_transactions:55 - Cleaning transaction data
+2026-02-26 20:01:13.602 | INFO     | src.data_processing.processor:clean_transactions:68 - Cleaned data shape: (1000, 9)
+2026-02-26 20:01:13.602 | INFO     | src.data_processing.processor:aggregate_to_customer_level:93 - Aggregating to customer level
+2026-02-26 20:01:13.632 | INFO     | src.data_processing.processor:extract_item_features:73 - Extracting item-level features
+2026-02-26 20:01:13.650 | INFO     | src.data_processing.processor:aggregate_to_customer_level:117 - Customer level data shape: (100, 24)
+2026-02-26 20:01:13.651 | INFO     | src.data_processing.processor:scale_features:122 - Scaling features
+2026-02-26 20:01:13.655 | INFO     | src.data_processing.processor:save_scaler:135 - Scaler saved to models\scaler.joblib
+2026-02-26 20:01:13.656 | INFO     | src.models.clustering:train:30 - Training KMeans with 5 clusters
+2026-02-26 20:01:13.656 | INFO     | src.models.clustering:train:34 - Applying PCA with 3 components
+2026-02-26 20:01:16.827 | INFO     | src.models.clustering:train:39 - Model training complete.
+2026-02-26 20:01:16.829 | INFO     | src.models.clustering:save_artifacts:72 - Model artifacts saved to models
+2026-02-26 20:01:16.834 | INFO     | src.pipelines.training_pipeline:run_training:34 - Training pipeline complete. Results saved to data\processed\customer_segments.csv
+2026-02-26 20:01:25.935 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-26 20:01:25.935 | INFO     | src.pipelines.inference_pipeline:run_inference:13 - Starting Inference Pipeline for data/synthetic_transactions.csv
+2026-02-26 20:01:25.936 | INFO     | src.data_processing.processor:load_data:17 - Loading data from data/synthetic_transactions.csv
+2026-02-26 20:01:25.944 | INFO     | src.data_processing.processor:clean_transactions:55 - Cleaning transaction data
+2026-02-26 20:01:25.949 | INFO     | src.data_processing.processor:clean_transactions:68 - Cleaned data shape: (1000, 9)
+2026-02-26 20:01:25.949 | INFO     | src.data_processing.processor:aggregate_to_customer_level:93 - Aggregating to customer level
+2026-02-26 20:01:25.964 | INFO     | src.data_processing.processor:extract_item_features:73 - Extracting item-level features
+2026-02-26 20:01:25.973 | INFO     | src.data_processing.processor:aggregate_to_customer_level:117 - Customer level data shape: (100, 24)
+2026-02-26 20:01:25.973 | INFO     | src.data_processing.processor:scale_features:122 - Scaling features
+2026-02-26 20:01:25.988 | INFO     | src.models.clustering:load_artifacts:46 - Loading model artifacts from disk...
+2026-02-26 20:01:26.018 | INFO     | src.models.clustering:load_artifacts:53 - Artifacts loaded successfully.
+2026-02-26 20:01:26.055 | INFO     | src.pipelines.inference_pipeline:run_inference:29 - Inference complete.
+2026-02-26 20:05:08.311 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-26 20:05:10.201 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-26 20:05:39.317 | INFO     | src.utils.logging:setup_logging:22 - Logging initialized.
+2026-02-26 20:05:39.318 | INFO     | src.pipelines.inference_pipeline:run_inference:13 - Starting Inference Pipeline for uploads\synthetic_transactions.csv
+2026-02-26 20:05:39.323 | INFO     | src.data_processing.processor:load_data:17 - Loading data from uploads\synthetic_transactions.csv
+2026-02-26 20:05:39.390 | INFO     | src.data_processing.processor:clean_transactions:55 - Cleaning transaction data
+2026-02-26 20:05:39.424 | INFO     | src.data_processing.processor:clean_transactions:68 - Cleaned data shape: (1000, 9)
+2026-02-26 20:05:39.425 | INFO     | src.data_processing.processor:aggregate_to_customer_level:93 - Aggregating to customer level
+2026-02-26 20:05:39.517 | INFO     | src.data_processing.processor:extract_item_features:73 - Extracting item-level features
+2026-02-26 20:05:39.574 | INFO     | src.data_processing.processor:aggregate_to_customer_level:117 - Customer level data shape: (100, 24)
+2026-02-26 20:05:39.575 | INFO     | src.data_processing.processor:scale_features:122 - Scaling features
+2026-02-26 20:05:39.586 | INFO     | src.models.clustering:load_artifacts:46 - Loading model artifacts from disk...
+2026-02-26 20:05:39.591 | INFO     | src.models.clustering:load_artifacts:53 - Artifacts loaded successfully.
+2026-02-26 20:05:39.833 | INFO     | src.pipelines.inference_pipeline:run_inference:29 - Inference complete.
+2026-02-26 20:17:28.290 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-26 20:18:22.311 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-26 20:18:45.094 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-26 20:19:00.460 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-26 20:20:25.655 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-26 20:20:36.357 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-26 20:20:36.357 | INFO     | src.pipelines.training_pipeline:run_training:23 - Starting Training Pipeline
+2026-02-26 20:20:36.359 | INFO     | src.pipelines.training_pipeline:run_training:29 - Training data: data/raw/int_online_tx.csv
+2026-02-26 20:20:36.359 | INFO     | src.data_processing.processor:load_data:38 - Loading data from data\raw\int_online_tx.csv
+2026-02-26 20:20:36.487 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-02-26 20:20:36.555 | INFO     | src.data_processing.processor:clean_transactions:90 - Cleaned data shape: (33698, 9)
+2026-02-26 20:20:36.559 | INFO     | src.data_processing.processor:save_top_items:68 - Top-items list saved to models\top_items.joblib
+2026-02-26 20:20:36.560 | INFO     | src.data_processing.processor:aggregate_to_customer_level:122 - Aggregating to customer level
+2026-02-26 20:20:36.589 | INFO     | src.data_processing.processor:extract_item_features:103 - Extracting item-level features
+2026-02-26 20:20:36.601 | INFO     | src.data_processing.processor:aggregate_to_customer_level:135 - Customer-level data shape: (414, 24)
+2026-02-26 20:20:36.601 | INFO     | src.data_processing.processor:scale_features:140 - Scaling features
+2026-02-26 20:20:36.606 | INFO     | src.data_processing.processor:save_scaler:59 - Scaler saved to models\scaler.joblib
+2026-02-26 20:20:36.611 | INFO     | src.models.clustering:train:44 - Training KMeans with 5 clusters
+2026-02-26 20:20:36.611 | INFO     | src.models.clustering:train:47 - Applying PCA with 3 components
+2026-02-26 20:20:38.747 | INFO     | src.models.clustering:train:51 - Model training complete.
+2026-02-26 20:20:38.750 | INFO     | src.models.clustering:save_artifacts:88 - Model artifacts saved to models
+2026-02-26 20:20:38.757 | INFO     | src.pipelines.training_pipeline:run_training:46 - Training complete. Results saved to data\processed\customer_segments.csv
+2026-02-26 20:21:02.869 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-26 20:21:02.869 | INFO     | src.pipelines.inference_pipeline:run_inference:24 - Starting Inference Pipeline for data/raw/int_online_tx.csv
+2026-02-26 20:21:02.871 | INFO     | src.data_processing.processor:load_data:38 - Loading data from data\raw\int_online_tx.csv
+2026-02-26 20:21:02.980 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-02-26 20:21:03.046 | INFO     | src.data_processing.processor:clean_transactions:90 - Cleaned data shape: (33698, 9)
+2026-02-26 20:21:03.046 | INFO     | src.data_processing.processor:aggregate_to_customer_level:122 - Aggregating to customer level
+2026-02-26 20:21:03.082 | INFO     | src.data_processing.processor:extract_item_features:103 - Extracting item-level features
+2026-02-26 20:21:03.091 | INFO     | src.data_processing.processor:aggregate_to_customer_level:135 - Customer-level data shape: (414, 24)
+2026-02-26 20:21:03.092 | INFO     | src.data_processing.processor:scale_features:140 - Scaling features
+2026-02-26 20:21:03.122 | INFO     | src.models.clustering:load_artifacts:59 - Loading model artifacts from disk...
+2026-02-26 20:21:03.151 | INFO     | src.models.clustering:load_artifacts:66 - Artifacts loaded successfully.
+2026-02-26 20:21:03.193 | INFO     | src.pipelines.inference_pipeline:run_inference:38 - Inference complete.
+2026-02-26 20:22:23.890 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-26 20:30:26.670 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-26 20:39:51.100 | INFO     | src.pipelines.inference_pipeline:run_inference:24 - Starting Inference Pipeline for uploads\Online_Retail.csv
+2026-02-26 20:39:51.115 | INFO     | src.data_processing.processor:load_data:38 - Loading data from uploads\Online_Retail.csv
+2026-02-26 20:39:58.625 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-02-26 20:39:58.632 | ERROR    | __main__:predict:82 - Error during prediction: 'CustomerID'
+2026-02-26 20:43:02.868 | INFO     | src.pipelines.inference_pipeline:run_inference:24 - Starting Inference Pipeline for uploads\customer_segments.csv
+2026-02-26 20:43:02.877 | INFO     | src.data_processing.processor:load_data:38 - Loading data from uploads\customer_segments.csv
+2026-02-26 20:43:02.933 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-02-26 20:43:02.941 | ERROR    | __main__:predict:82 - Error during prediction: 'Quantity'
+2026-02-26 20:47:38.079 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-26 20:48:01.193 | INFO     | src.pipelines.inference_pipeline:run_inference:24 - Starting Inference Pipeline for uploads\int_online_tx.csv
+2026-02-26 20:48:01.199 | INFO     | src.data_processing.processor:load_data:38 - Loading data from uploads\int_online_tx.csv
+2026-02-26 20:48:01.551 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-02-26 20:48:01.828 | INFO     | src.data_processing.processor:clean_transactions:90 - Cleaned data shape: (33698, 9)
+2026-02-26 20:48:01.843 | INFO     | src.data_processing.processor:aggregate_to_customer_level:122 - Aggregating to customer level
+2026-02-26 20:48:01.979 | INFO     | src.data_processing.processor:extract_item_features:103 - Extracting item-level features
+2026-02-26 20:48:02.012 | INFO     | src.data_processing.processor:aggregate_to_customer_level:135 - Customer-level data shape: (414, 24)
+2026-02-26 20:48:02.013 | INFO     | src.data_processing.processor:scale_features:140 - Scaling features
+2026-02-26 20:48:02.029 | INFO     | src.models.clustering:load_artifacts:59 - Loading model artifacts from disk...
+2026-02-26 20:48:02.040 | INFO     | src.models.clustering:load_artifacts:66 - Artifacts loaded successfully.
+2026-02-26 20:48:02.204 | INFO     | src.pipelines.inference_pipeline:run_inference:38 - Inference complete.
+2026-02-26 20:48:29.190 | INFO     | src.pipelines.inference_pipeline:run_inference:24 - Starting Inference Pipeline for uploads\customer_segments.csv
+2026-02-26 20:48:29.196 | INFO     | src.data_processing.processor:load_data:38 - Loading data from uploads\customer_segments.csv
+2026-02-26 20:48:29.254 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-02-26 20:48:29.258 | ERROR    | __main__:predict:82 - Error during prediction: 'Quantity'
+2026-02-27 12:03:48.530 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-27 12:04:04.900 | INFO     | src.pipelines.inference_pipeline:run_inference:24 - Starting Inference Pipeline for uploads\customer_segments.csv
+2026-02-27 12:04:04.902 | INFO     | src.data_processing.processor:load_data:38 - Loading data from uploads\customer_segments.csv
+2026-02-27 12:04:05.007 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-02-27 12:04:05.035 | ERROR    | __main__:predict:82 - Error during prediction: 'Quantity'
+2026-02-27 12:04:24.461 | INFO     | src.pipelines.inference_pipeline:run_inference:24 - Starting Inference Pipeline for uploads\int_online_tx.csv
+2026-02-27 12:04:24.463 | INFO     | src.data_processing.processor:load_data:38 - Loading data from uploads\int_online_tx.csv
+2026-02-27 12:04:24.686 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-02-27 12:04:24.799 | INFO     | src.data_processing.processor:clean_transactions:90 - Cleaned data shape: (33698, 9)
+2026-02-27 12:04:24.821 | INFO     | src.data_processing.processor:aggregate_to_customer_level:122 - Aggregating to customer level
+2026-02-27 12:04:24.884 | INFO     | src.data_processing.processor:extract_item_features:103 - Extracting item-level features
+2026-02-27 12:04:24.924 | INFO     | src.data_processing.processor:aggregate_to_customer_level:135 - Customer-level data shape: (414, 24)
+2026-02-27 12:04:24.925 | INFO     | src.data_processing.processor:scale_features:140 - Scaling features
+2026-02-27 12:04:24.968 | INFO     | src.models.clustering:load_artifacts:59 - Loading model artifacts from disk...
+2026-02-27 12:04:25.014 | INFO     | src.models.clustering:load_artifacts:66 - Artifacts loaded successfully.
+2026-02-27 12:04:25.065 | INFO     | src.pipelines.inference_pipeline:run_inference:38 - Inference complete.
+2026-02-27 12:10:53.537 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-27 12:11:04.654 | INFO     | src.pipelines.inference_pipeline:run_inference:24 - Starting Inference Pipeline for uploads\int_online_tx.csv
+2026-02-27 12:11:04.657 | INFO     | src.data_processing.processor:load_data:38 - Loading data from uploads\int_online_tx.csv
+2026-02-27 12:11:05.019 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-02-27 12:11:05.229 | INFO     | src.data_processing.processor:clean_transactions:90 - Cleaned data shape: (33698, 9)
+2026-02-27 12:11:05.247 | INFO     | src.data_processing.processor:aggregate_to_customer_level:122 - Aggregating to customer level
+2026-02-27 12:11:05.364 | INFO     | src.data_processing.processor:extract_item_features:103 - Extracting item-level features
+2026-02-27 12:11:05.397 | INFO     | src.data_processing.processor:aggregate_to_customer_level:135 - Customer-level data shape: (414, 24)
+2026-02-27 12:11:05.400 | INFO     | src.data_processing.processor:scale_features:140 - Scaling features
+2026-02-27 12:11:05.430 | INFO     | src.models.clustering:load_artifacts:59 - Loading model artifacts from disk...
+2026-02-27 12:11:05.465 | INFO     | src.models.clustering:load_artifacts:66 - Artifacts loaded successfully.
+2026-02-27 12:11:05.595 | INFO     | src.pipelines.inference_pipeline:run_inference:38 - Inference complete.
+2026-02-27 13:02:20.788 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-27 13:02:35.242 | INFO     | src.pipelines.inference_pipeline:run_inference:24 - Starting Inference Pipeline for uploads\int_online_tx.csv
+2026-02-27 13:02:35.246 | INFO     | src.data_processing.processor:load_data:38 - Loading data from uploads\int_online_tx.csv
+2026-02-27 13:02:35.607 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-02-27 13:02:35.905 | INFO     | src.data_processing.processor:clean_transactions:90 - Cleaned data shape: (33698, 9)
+2026-02-27 13:02:35.945 | INFO     | src.data_processing.processor:aggregate_to_customer_level:122 - Aggregating to customer level
+2026-02-27 13:02:36.096 | INFO     | src.data_processing.processor:extract_item_features:103 - Extracting item-level features
+2026-02-27 13:02:36.138 | INFO     | src.data_processing.processor:aggregate_to_customer_level:135 - Customer-level data shape: (414, 24)
+2026-02-27 13:02:36.139 | INFO     | src.data_processing.processor:scale_features:140 - Scaling features
+2026-02-27 13:02:36.180 | INFO     | src.models.clustering:load_artifacts:59 - Loading model artifacts from disk...
+2026-02-27 13:02:36.220 | INFO     | src.models.clustering:load_artifacts:66 - Artifacts loaded successfully.
+2026-02-27 13:02:36.352 | INFO     | src.pipelines.inference_pipeline:run_inference:38 - Inference complete.
+2026-02-27 14:20:59.773 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-27 14:21:43.998 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-27 14:22:34.786 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-02-27 14:23:21.537 | INFO     | src.pipelines.inference_pipeline:run_inference:24 - Starting Inference Pipeline for uploads\int_online_tx.csv
+2026-02-27 14:23:21.541 | INFO     | src.data_processing.processor:load_data:38 - Loading data from uploads\int_online_tx.csv
+2026-02-27 14:23:21.993 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-02-27 14:23:22.256 | INFO     | src.data_processing.processor:clean_transactions:90 - Cleaned data shape: (33698, 9)
+2026-02-27 14:23:22.274 | INFO     | src.data_processing.processor:aggregate_to_customer_level:122 - Aggregating to customer level
+2026-02-27 14:23:22.426 | INFO     | src.data_processing.processor:extract_item_features:103 - Extracting item-level features
+2026-02-27 14:23:22.473 | INFO     | src.data_processing.processor:aggregate_to_customer_level:135 - Customer-level data shape: (414, 24)
+2026-02-27 14:23:22.474 | INFO     | src.data_processing.processor:scale_features:140 - Scaling features
+2026-02-27 14:23:22.494 | INFO     | src.models.clustering:load_artifacts:59 - Loading model artifacts from disk...
+2026-02-27 14:23:22.521 | INFO     | src.models.clustering:load_artifacts:66 - Artifacts loaded successfully.
+2026-02-27 14:23:22.682 | INFO     | src.pipelines.inference_pipeline:run_inference:38 - Inference complete.
+2026-03-02 12:59:29.718 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-03-02 13:43:13.571 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-03-02 13:44:25.047 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-03-04 11:55:12.482 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-03-09 12:44:24.465 | INFO     | src.utils.logging:setup_logging:35 - Logging initialized.
+2026-03-09 12:46:34.147 | INFO     | src.pipelines.inference_pipeline:run_inference:24 - Starting Inference Pipeline for uploads\int_online_tx.csv
+2026-03-09 12:46:34.153 | INFO     | src.data_processing.processor:load_data:38 - Loading data from uploads\int_online_tx.csv
+2026-03-09 12:46:34.645 | INFO     | src.data_processing.processor:clean_transactions:83 - Cleaning transaction data
+2026-03-09 12:46:34.977 | INFO     | src.data_processing.processor:clean_transactions:90 - Cleaned data shape: (33698, 9)
+2026-03-09 12:46:35.016 | INFO     | src.data_processing.processor:aggregate_to_customer_level:122 - Aggregating to customer level
+2026-03-09 12:46:35.173 | INFO     | src.data_processing.processor:extract_item_features:103 - Extracting item-level features
+2026-03-09 12:46:35.216 | INFO     | src.data_processing.processor:aggregate_to_customer_level:135 - Customer-level data shape: (414, 24)
+2026-03-09 12:46:35.217 | INFO     | src.data_processing.processor:scale_features:140 - Scaling features
+2026-03-09 12:46:35.245 | INFO     | src.models.clustering:load_artifacts:59 - Loading model artifacts from disk...
+2026-03-09 12:46:35.280 | INFO     | src.models.clustering:load_artifacts:66 - Artifacts loaded successfully.
+2026-03-09 12:46:35.446 | INFO     | src.pipelines.inference_pipeline:run_inference:38 - Inference complete.
