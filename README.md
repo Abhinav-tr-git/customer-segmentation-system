@@ -57,18 +57,4 @@ Config Management: YAML
 
 
 
- Project Structure
-├── app.py                  # Flask web app
-├── main.py                 # CLI entry point
-├── config/
-│   └── config.yaml         # Configuration file
-├── src/
-│   ├── data_processing/    # Data cleaning & feature engineering
-│   ├── models/             # Model training logic
-│   ├── pipelines/          # Training & inference pipelines
-│   └── utils/              # Logging
-├── models/                 # Saved ML artifacts
-├── data/                   # Raw & processed data
-├── templates/              # HTML files
-├── static/                 # CSS
-└── README.md
+
